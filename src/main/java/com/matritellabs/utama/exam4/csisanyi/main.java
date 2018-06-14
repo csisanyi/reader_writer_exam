@@ -11,7 +11,7 @@ public class main {
     public static void main(String[] args) {
 
         List<String> fileList = new ArrayList<>();
-        fileList.add("/home/sanyi/workspace/agile_team_handler/src/main/java/com/matritellabs/utama/exam4/resources/write_twofile_file1.txt");
+        fileList.add("/home/sanyi/workspace/agile_team_handler/src/main/java/com/matritellabs/utama/exam4/resources/write_onefile.txt");
         fileList.add("/home/sanyi/workspace/agile_team_handler/src/main/java/com/matritellabs/utama/exam4/resources/write_twofile_file2.txt");
         fileList.add("/home/sanyi/workspace/agile_team_handler/src/main/java/com/matritellabs/utama/exam4/resources/agile_one.txt");
         List<String> memberList = new ArrayList<>();
@@ -33,7 +33,7 @@ public class main {
 //            TeamLoader.readTeamsFromFile(fileList, TeamFileFormat.TWO_FILES);
             SimpleDateFormat SDF = new SimpleDateFormat("yyyy-MM-dd");
         try {
-            TeamLoader.writeTeamToFile(fileList,TeamFileFormat.TWO_FILES,"TeamHozzakAMeleget",SDF.parse("1986-08-27"),3,memberList);
+            TeamLoader.writeTeamToFile(fileList,TeamFileFormat.ONE_FILE,"TeamHozzakAMeleget",SDF.parse("1986-08-27"),3,memberList);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ParseException e) {

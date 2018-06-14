@@ -160,10 +160,11 @@ public class TeamLoader {
             String formattedDate = SDF.format(creationDate);
             String membersString = "";
             for (int i = 0; i < listOfMembers.size(); i++) {
-                membersString = membersString + listOfMembers.get(i) + ";";
                 if (i == listOfMembers.size() - 1) {
                     membersString = membersString + listOfMembers.get(i);
+                    break;
                 }
+                membersString = membersString + listOfMembers.get(i) + ";";
             }
 
             log.info("writing in progress");
@@ -187,10 +188,13 @@ public class TeamLoader {
             String formattedDate = SDF.format(creationDate);
             String membersString = "";
             for (int i = 0; i < listOfMembers.size(); i++) {
-                membersString = membersString + listOfMembers.get(i) + ";";
                 if (i == listOfMembers.size() - 1) {
                     membersString = membersString + listOfMembers.get(i);
+                    break;
                 }
+                membersString = membersString + listOfMembers.get(i) + ";";
+
+
             }
 
             log.info("writing in progress");

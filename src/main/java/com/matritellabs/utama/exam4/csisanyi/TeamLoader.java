@@ -151,12 +151,19 @@ public class TeamLoader {
             Path fileToWrite = Paths.get(filePathlist.get(0));
             BufferedWriter writer = new BufferedWriter(new FileWriter(fileToWrite.toFile()));
 
+            if(numberOfMembers != listOfMembers.size()) {
+                String message = "number of members and actual members do not correspont";
+                log.error(message);
+                throw new RuntimeException(message);
+            }
+
             String formattedDate = SDF.format(creationDate);
             String membersString = "";
             for (int i = 0; i < listOfMembers.size(); i++) {
                 membersString = membersString + listOfMembers.get(i) + ";";
             }
 
+            log.info("writing in progress");
             writer.write(teamName + ";" + formattedDate + ";" + numberOfMembers + ";" + membersString);
             writer.close();
             log.info("method executed correctly");
@@ -168,14 +175,22 @@ public class TeamLoader {
             Path fileToWrite2 = Paths.get(filePathlist.get(1));
             BufferedWriter writer2 = new BufferedWriter(new FileWriter(fileToWrite2.toFile()));
 
+            if(numberOfMembers != listOfMembers.size()) {
+                String message = "number of members and actual members do not correspont";
+                log.error(message);
+                throw new RuntimeException(message);
+            }
+
             String formattedDate = SDF.format(creationDate);
             String membersString = "";
             for (int i = 0; i < listOfMembers.size(); i++) {
                 membersString = membersString + listOfMembers.get(i) + ";";
             }
 
+            log.info("writing in progress");
             writer.write(teamName + ";" + formattedDate + ";" + numberOfMembers);
             writer2.write(teamName + ";" + membersString) ;
+
 
             writer.close();
             writer2.close();
